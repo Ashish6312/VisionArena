@@ -1,0 +1,56 @@
+# ============================================================
+# Phase 0 — core API
+# ============================================================
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-multipart==0.0.20
+
+pytest==8.3.4
+httpx==0.28.1          # required by FastAPI's TestClient
+
+ruff==0.8.4
+black==24.10.0
+
+# ============================================================
+# Week 1 — OpenCV video engine
+# ============================================================
+# NOTE: opencv-contrib-python, not opencv-python — MediaPipe (below) depends
+# on the contrib build; installing both packages side by side puts two
+# distributions on the same `cv2` import path. contrib is a superset for
+# everything this project uses (VideoCapture/VideoWriter/imshow/drawing).
+opencv-contrib-python==4.10.0.84
+numpy==2.2.1
+
+# ============================================================
+# Week 2 — YOLO detection
+# ============================================================
+ultralytics==8.3.55
+torch==2.6.0
+torchvision==0.21.0
+# CPU wheels: pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cpu
+
+# ============================================================
+# Week 3 — tracking
+# ============================================================
+supervision==0.25.1     # ByteTrack implementation
+
+# ============================================================
+# Week 4 — gestures
+# ============================================================
+# Uses MediaPipe's Tasks API (HandLandmarker/PoseLandmarker), not the older
+# `mp.solutions` API. Needs two .task model bundles downloaded separately
+# into data/models/ — see docs/cv_pipeline.md "Setup".
+mediapipe==1.0.0
+
+# ============================================================
+# Week 5 — game
+# ============================================================
+pygame==2.6.1
+
+# ============================================================
+# Week 6 — websockets / persistence
+# ============================================================
+websockets==14.1
+sqlalchemy==2.0.36

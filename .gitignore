@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+.env
+
+# recorded gameplay / trajectories / session DBs — regenerate, don't commit
+data/recordings/*
+!data/recordings/.gitkeep
+data/trajectories/*
+!data/trajectories/.gitkeep
+data/sessions/*
+!data/sessions/.gitkeep
+data/models/*
+!data/models/.gitkeep
+
+# model weights — auto-download (YOLO) or fetched by curl per docs/cv_pipeline.md (MediaPipe)
+*.pt
+*.task
+
+.vscode/
+.idea/
+
+# docs kept locally for reference, not pushed — README.md is the only
+# markdown that ships in the repo
+docs/*.md
+
+# test suite kept locally, not pushed to the public repo
+tests/
